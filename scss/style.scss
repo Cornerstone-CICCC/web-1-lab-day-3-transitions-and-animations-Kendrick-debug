@@ -27,3 +27,191 @@ body {
     font-size: 20px;
   }
 }
+
+#btn1{
+  background-color: black;
+  color: white;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+#btn1:hover{
+  box-shadow: 5px 5px;
+  border: 1px solid;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.1s;
+  
+
+
+}
+
+#btn2 {
+  background-color: black;
+  color: white;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+}
+
+#btn2:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  top: -4px;
+  left: -2px;
+  &::after {
+    content: " ";
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 8px;
+    left: 8px;
+    z-index: -1;
+  }
+}
+
+
+#btn2:hover {
+  transform: translate(-50% -50%);
+}
+
+
+#btn3 {
+background-color: green;
+color: aliceblue;
+position: relative;
+overflow: hidden;
+transition: background-color 0.4s linear;
+}
+
+#btn3:hover {
+  background-color: rgb(40, 199, 40) ;
+}
+
+#btn3::after {
+  content: " " ;
+  width: 25px;
+  height: 60px;
+  background-color: rgb(228, 222, 222);
+  transform: rotate(25deg);
+  position: absolute;
+  top: -10px;
+  left: -40px;
+  transition: left 0.5s;
+
+}
+
+#btn3:hover::after {
+  left: 110%;
+}
+
+#shape1 {
+  background-color: gray;
+  width: 250px;
+  height: 250px;
+  padding: 90px 60px;
+  border: 2px black;
+  transition: background-color 0.4s linear;
+}
+
+#shape1::after {
+  content: "¡Hello!";
+  color: black;
+  font-size: 45px;
+  width: 250px;
+  height: 250px;
+  opacity: 0;
+  transition: opacity 0.7s linear;
+}
+
+#shape1:hover::after {
+  opacity: 1;
+}
+
+#shape1:hover {
+  background-color: yellowgreen;
+}
+
+#shape2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background-color: yellow;
+  transition: 3s;
+  animation: moving 4s infinite;
+}
+
+@keyframes moving {
+  0% {
+      background-color: yellow;
+      clip-path: inset(0);
+    top: 0;
+    left: 0;
+    transform: translate(0, 0)
+  }
+  25% {
+      background-color: rgb(255, 166, 0);
+      clip-path: circle(50% at 50% 50%);
+    top: 0;
+    left: 100%;
+    transform: translate(-100%, 0);
+  }
+  50% {
+    background-color: blueviolet;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%)
+  }
+  75% {
+     background-color: rgb(16, 167, 29);
+     clip-path: polygon(50% 0%, 0% 35%, 20% 100%, 80% 100%, 100% 35%);
+    top: 100%;
+    left: 0%;
+    transform: translate(0%, -100%)
+  }
+
+  100% {
+      background-color: rgb(255, 0, 64);
+      clip-path: inset(0);
+    top: 0;
+    left: 0;
+    transform: translate(0, 0)
+  }
+
+
+
+#figure1 img {
+  width: 500px;
+  position: relative;
+  z-index: 2;
+}
+
+figcaption{
+  background-color: rgb(135, 218, 211);
+  color: black;
+  position: relative;
+  z-index: 1; 
+  transform: translateY(-50px);
+}
+
+#figure1:hover {
+  img{ filter: grayscale(100%);
+
+  }
+  figcaption{
+    background-color: pink;
+    width: 500px;
+    font-size: 40px;
+    transform: translateY(-6px);
+    transition: 0.6s linear;
+}
+}
